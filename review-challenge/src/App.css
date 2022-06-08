@@ -1,0 +1,130 @@
+.App {
+  text-align: center;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.image {
+  width: 95%;
+  padding: 10px;
+  position: relative;
+  top: 20%;
+}
+
+.header-display {
+  text-shadow: darkgray 0px 0px 1px;
+  display: flex;
+  justify-content: space-around;
+  background: linear-gradient(130deg, #fbab7e 0%, #f7ce68 33%, #ffffff 66%, #ffffff 100%);
+}
+
+.header-background {
+  line-height: 1.1;
+  text-align: left;
+  width: 50vw;
+  height: 88vh;
+  color: white;
+  padding: 3%;
+  display: flex;
+  align-items: center;
+}
+
+.star {
+  color: hsla(47, 100%, 50%, 1);
+  position: absolute;
+  left: 327px;
+  top: -25px;
+}
+
+.star-rating {
+  position: absolute;
+  left: 357px;
+  top: -7px;
+  font-size: 25px;
+  color: white;
+  font-weight: bold;
+  text-shadow: gray 0px 0px 1px;
+}
+
+.comment {
+  color: lightgray;
+  position: absolute;
+  left: 330px;
+  top: 385px;
+  cursor: pointer;
+  display: flex;
+}
+
+.comment:hover {
+  color: hsla(38, 95%, 50%, 1);
+}
+
+/* .comment-list {
+  width: 80%;
+  max-width: 1000px;
+  padding: 15px;
+  border-radius: 20px;
+  margin: auto;
+} */
+
+@media screen and (max-width: 800px) {
+  .header-display {
+    text-shadow: black 0px 0px 1px;
+    display: block;
+    background: linear-gradient(130deg, #fbab7e 0%, #f7ce68 45%, white 100%);
+    padding-bottom: 50px;
+    width: 105vw;
+  }
+
+  .header-background {
+    line-height: 1.1;
+    text-align: center;
+    width: auto;
+    height: auto;
+    color: white;
+    padding-top: 20%;
+  }
+
+  .image {
+    left: 50%;
+  }
+  /* .comment-list {
+    width: auto;
+  } */
+}
+
+@media screen and (max-width: 400px) {
+  .star {
+    left: calc(100vw - 80px);
+  }
+
+  .star-rating {
+    left: calc(100vw - 52px);
+  }
+
+  .comment {
+    left: calc(100vw - 80px);
+  }
+
+  .comment-list {
+    width: auto;
+  }
+}
