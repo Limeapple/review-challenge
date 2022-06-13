@@ -1,7 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 
-const Comment = ({ message, editMessageID, setEditMessageID }) => {
+const Comment = ({
+  message,
+  editMessageID,
+  setEditMessageID,
+  deleteMessage,
+  setDeleteMessageID,
+}) => {
   return (
     <div
       style={{
@@ -41,6 +47,12 @@ const Comment = ({ message, editMessageID, setEditMessageID }) => {
                 setEditMessageID(editMessageID < 1 ? message.id : 0);
               }}
             />
+            <div
+              onClick={() => {
+                deleteMessage(editMessageID < 1 ? message.id : 0);
+              }}>
+              X
+            </div>
           </div>
         </div>
 

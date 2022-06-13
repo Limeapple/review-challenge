@@ -10,12 +10,22 @@ const ReviewAndMessage = () => {
   const [message, setMessage] = useState("");
   const [review, setReview] = useState({});
   const [editMessageID, setEditMessageID] = useState(0);
+  const [deleteMessageID, setDeleteMessageID] = useState(0);
   const location = useLocation();
   useEffect(() => {
     reviewData.map((obj) => {
       if (obj.id === location.pathname.split("/")[2]) setReview(obj);
     });
   }, []);
+
+  const deleteMessage = () => {
+    let temp = review;
+    if (temp.id === review.id) {
+      temp.comment = [];
+    }
+
+    setReview({ ...temp });
+  };
 
   const displayStars = () => {
     const stars = [];
@@ -68,6 +78,9 @@ const ReviewAndMessage = () => {
             message={message}
             editMessageID={editMessageID}
             setEditMessageID={setEditMessageID}
+            deleteMessageID={deleteMessageID}
+            setDeleteMessageID={setDeleteMessageID}
+            deleteMessage={deleteMessage}
           />
         ))}
         <div
